@@ -12,7 +12,7 @@ export default class HomePage extends React.Component {
 		super(props);
 		this.state = {
       MovieList: "",
-      UserResearch: "",
+      CurrentList: [],
     };
   }
   
@@ -25,16 +25,44 @@ export default class HomePage extends React.Component {
     }
 
   research = (UserResearch) => {
-    this.setState({ UserResearch })
+    this.setState({ CurrentList: [] })
+    this.CompareResult(UserResearch);
   }
 
+  nCompare(str1, str2) {
+    if (!str1.length)
+      return (false)
+    for (var i = 0; i < str1.length; i++)
+      if (str1[i] !== str2[i])
+        return (false);
+    return (true);
+  }
+
+  CompareResult = (UserResearch) => {
+    const Movies = this.state.MovieList;
+    var current = [];
+
+    if (!UserResearch)
+      return ;
+      for (var i = 0; i < Movies.length; i++)
+      {
+        if (this.nCompare(UserResearch.toLowerCase(), Movies[i].show.name.toLowerCase()))
+          current.push(Movies[i])
+    }
+    this.setState({ CurrentList: current })
+  } 
+
   cardList = (data) => {
+    var nb = 3;
+
+    if (data.length < 4 && data.length)
+      nb = 12 / data.length
     return (
       <CardList>
         <Grid container spacing={5}>
           {
             data.map((item, id) => 
-              <Grid key={id} item xs={4}>
+              <Grid key={id} item xs={nb}>
                 <MovieCard data={item} />
               </Grid>
             )
@@ -45,7 +73,6 @@ export default class HomePage extends React.Component {
   }
 
   render() {
-    console.log(this.state.MovieList)
     return (
       <div>
         <Search>
@@ -54,8 +81,8 @@ export default class HomePage extends React.Component {
         </Search>
         <div>
           {
-            this.state.MovieList
-            ? this.cardList(this.state.MovieList)
+            this.state.CurrentList[0]
+            ? this.cardList(this.state.CurrentList)
             : null
           }
         </div>
