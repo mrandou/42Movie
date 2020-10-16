@@ -3,8 +3,8 @@ import { AppBar } from '@material-ui/core';
 import theme from './Theme'
 
 export const MyApp = styled("div") ({
-  background: theme.backgroundColor,
-  height: '100vh'
+  // background: theme.backgroundColor,
+  // height: '100vh'
 });
 
 export const HeaderBar = styled(AppBar)({
@@ -26,5 +26,12 @@ export const Search = styled("div") ({
   paddingTop: '20px',
   textAlign: "center",
 });
+
+export const CardList = styled("div") ({
+  marginRight: '20%',
+  marginLeft: '20%',
+  marginTop: '40px',
+  marginBottom: '80px'
+})
 
 export default MyApp;

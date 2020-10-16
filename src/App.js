@@ -4,8 +4,8 @@ import MyApp from './Style/StyledComponents'
 import HomePage from './Pages/HomePage'
 import MoviePage from './Pages/MoviePage'
 import Error404 from './Pages/404Page'
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from './Organisms/Header';
+import Footer from './Organisms/Footer';
 
 function App() {
   return (

@@ -6,28 +6,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import SearchIcon from '@material-ui/icons/Search';
 import MovieIcon from '@material-ui/icons/Movie';
-
-const useStyles = theme => ({
-  root: {
-    marginTop: '30px',
-    padding: '3px 5px',
-    display: 'flex',
-    alignItems: 'center',
-    width: 400,
-    margin: '0 auto'
-  },
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
-  },
-  iconButton: {
-    padding: 10,
-  },
-  divider: {
-    height: 28,
-    margin: 4,
-  },
-});
+import { searchStyles } from '../Style/MakeStykes'
 
 class SearchBar extends React.Component {
 
@@ -57,4 +36,4 @@ SearchBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(useStyles)(SearchBar);
+export default withStyles(searchStyles)(SearchBar);
