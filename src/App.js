@@ -1,26 +1,25 @@
 import React from 'react';
-import './App.css';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MyApp from './Style/StyledComponents'
 import HomePage from './Pages/HomePage'
 import MoviePage from './Pages/MoviePage'
 import Error404 from './Pages/404Page'
-
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route path="/Movie/:id">
-          <MoviePage />
-        </Route>
-        <Route>
-          <Error404 />
-        </Route>
-      </Switch>
-    </Router>
+    <MyApp> 
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/Movie/:id" component={MoviePage}/>
+          <Route component={Error404} />
+        </Switch>
+        <Footer />
+      </Router>
+    </MyApp>
   );
 }
 
