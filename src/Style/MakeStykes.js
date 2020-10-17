@@ -58,6 +58,7 @@ export const movieStyles = theme => ({
   },
   genreTags: {
     marginTop: 10,
+    marginRight: 10,
     // maxWidth: 100,
     // margin: '0 auto',
   }

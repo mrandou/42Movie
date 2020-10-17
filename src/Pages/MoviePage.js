@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { movieStyles } from '../Style/MakeStykes'
 import { Language, Translate, Videocam, Info } from '@material-ui/icons/';
 import defaultPic from '../Assets/defaultpic.jpg'
+import { Link } from 'react-router-dom'
 
 class MoviePage extends React.Component {
   constructor(props) {
@@ -47,8 +48,12 @@ class MoviePage extends React.Component {
 
   MovieNotFound() {
     return (
-      <div>
-        <h2>Movie Not Found</h2>
+      <div style={{ textAlign: 'center', marginTop: 50 }}>
+        <Typography variant="h4">Movie Not Found</Typography>
+        <p>Maybe it's a mistake !</p>
+        <Link to={{pathname:"/"}}>
+          <p>Click here to come back on the right way !</p>
+        </Link>
       </div>
     )
   }
@@ -65,27 +70,34 @@ class MoviePage extends React.Component {
           <Grid container>
             <Grid item xs={4} className={classes.elements}>
               <img src={Movie.image ? Movie.image.medium : defaultPic } alt={Movie.name} className={classes.elements}/>
-              <Grid container>
               {
                 Movie.genres.map((genre, id) =>
-                  <Grid key={id} item xs={6} className={classes.genreTags}>
-                    <Chip 
+                    <Chip
+                      key={id}
                       label={genre}
                       size="small"
                       color="secondary"
+                      className={classes.genreTags}
                     />
-                  </Grid>
                 )
               }
-              </Grid>
             </Grid>
             <Grid item xs={8} className={classes.description}>
               {
                 Movie.summary
                 ? <div dangerouslySetInnerHTML={{__html: Movie.summary}} />
                 : <p>This movie doesn't have any description</p>
-
               }
+              <p>
+                Schedule : {
+                  Movie.schedule
+                  ? Movie.schedule.days[0]
+                  ? Movie.schedule.days[0] : "Unknown"
+                  : null
+                }
+              </p>
+              <p>Premiered : {Movie.premiered ? Movie.premiered : "Unknown"}</p>
+              <p>Rating : {Movie.rating.average ? Movie.rating.average : "Unkown"}</p>
               <Chip 
                 icon={<Translate />}
                 label={Movie.language ? Movie.language : "Unknown"}
