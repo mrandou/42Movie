@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import { Grid, Paper, Chip } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { movieStyles } from '../Style/MakeStykes'
-import { Language, Translate, Videocam, Info } from '@material-ui/icons/';
+import { movieStyles } from '../Style/MakeStyles'
+import { Language, Translate, Videocam, Info, Home } from '@material-ui/icons/';
 import defaultPic from '../Assets/defaultpic.jpg'
 import { Link } from 'react-router-dom'
 
@@ -123,6 +123,11 @@ class MoviePage extends React.Component {
                 color={"primary"}
                 className={classes.tags}
               />
+              <div  className={classes.home}>
+                <Link to={{pathname:"/"}}>
+                  <Home color="primary"/>
+                </Link>
+              </div>
             </Grid>
           </Grid>
         </Paper>

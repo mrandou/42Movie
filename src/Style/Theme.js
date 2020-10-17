@@ -1,8 +1,7 @@
 const theme = {
-  primaryColor: 'ff000',
-  secondaryColor: '',
+  primaryColor: '#1e1e1e',
+  secondaryColor: '#ff0000',
   backgroundColor: "linear-gradient(142deg, #d4d4d47d 50%, #ffffffcf 86%)",
-  barColor: "#ff0000",
 }
 
 export default theme;

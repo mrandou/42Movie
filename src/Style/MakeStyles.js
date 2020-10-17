@@ -6,7 +6,11 @@ export const searchStyles = theme => ({
     padding: '3px 5px',
     display: 'flex',
     alignItems: 'center',
-    width: 400,
+    maxWidth: 400,
+    [theme.breakpoints.down(430)] : {
+      marginRight: "5%",
+      marginLeft: "5%",
+    },
     margin: '0 auto'
   },
   input: {
@@ -36,9 +40,9 @@ export const movieStyles = theme => ({
   root: {
     maxWidth: 1000,
     marginTop: 50,
-    paddingTop: 20,
+    paddingTop: 50,
     margin: '0 auto',
-    paddingBottom: 30,
+    paddingBottom: 100,
   },
   elements: {
     maxWidth: 200,
@@ -59,8 +63,13 @@ export const movieStyles = theme => ({
   genreTags: {
     marginTop: 10,
     marginRight: 10,
-    // maxWidth: 100,
-    // margin: '0 auto',
+  },
+  home: {
+    textAlign:"right",
+    [theme.breakpoints.down(430)] : {
+      textAlign:"center",
+    },
+    marginTop: 50,
   }
 })
 

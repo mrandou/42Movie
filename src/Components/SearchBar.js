@@ -6,7 +6,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import SearchIcon from '@material-ui/icons/Search';
 import MovieIcon from '@material-ui/icons/Movie';
-import { searchStyles } from '../Style/MakeStykes'
+import { searchStyles } from '../Style/MakeStyles'
 
 class SearchBar extends React.Component {
 

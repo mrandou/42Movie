@@ -56,16 +56,20 @@ export default class HomePage extends React.Component {
   }
 
   cardList = (data) => {
-    var nb = 3;
+    var nb = [6, 4, 3];
 
     if (data.length < 4 && data.length)
-      nb = 12 / data.length
+      nb[2] = 12 / data.length;
+    if (data.length < 3 && data.length)
+      nb[1] = 12 / data.length;
+    if (data.length < 2 && data.length)
+      nb[0] = 12 / data.length;
     return (
       <CardList>
         <Grid container spacing={5}>
           {
             data.map((item, id) => 
-              <Grid key={id} item xs={nb}>
+              <Grid key={id} item xs={12} sm={nb[0]} md={nb[1]} lg={nb[2]}>
                 <MovieCard data={item} />
               </Grid>
             )

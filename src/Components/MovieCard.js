@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import defaultPic from '../Assets/defaultpic.jpg'
-import { cardStyles } from '../Style/MakeStykes';
+import { cardStyles } from '../Style/MakeStyles';
 import { Link } from 'react-router-dom'
 
 export default function MovieCard(data) {
