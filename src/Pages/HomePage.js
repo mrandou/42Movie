@@ -6,6 +6,7 @@ import SearchBar from '../Components/SearchBar'
 import MovieCard from '../Components/MovieCard'
 import Grid from '@material-ui/core/Grid';
 import { CardList } from '../Style/StyledComponents'
+import { nCompare, splitSpaces} from '../Utilities/Tools'
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -29,28 +30,30 @@ export default class HomePage extends React.Component {
     this.CompareResult(UserResearch);
   }
 
-  nCompare(str1, str2) {
-    if (!str1.length)
-      return (false)
-    for (var i = 0; i < str1.length; i++)
-      if (str1[i] !== str2[i])
-        return (false);
-    return (true);
-  }
-
   CompareResult = (UserResearch) => {
     const Movies = this.state.MovieList;
     var current = [];
-
     if (!UserResearch)
       return ;
-      for (var i = 0; i < Movies.length; i++)
+    for (var i = 0; i < Movies.length; i++)
+    {
+      var splitName = splitSpaces(Movies[i].show.name.toLowerCase());
+      for (var k = 0; k < splitName.length; k++)
       {
-        if (this.nCompare(UserResearch.toLowerCase(), Movies[i].show.name.toLowerCase()))
+        if (nCompare(UserResearch.toLowerCase(), Movies[i].show.name.toLowerCase()))
+        {
           current.push(Movies[i])
+          break ;
+        }
+        else if (nCompare(UserResearch.toLowerCase(), splitName[k]))
+        {
+          current.push(Movies[i])
+          break ;
+        }
+      }
     }
     this.setState({ CurrentList: current })
-  } 
+  }
 
   cardList = (data) => {
     var nb = 3;
@@ -91,3 +94,53 @@ export default class HomePage extends React.Component {
     )
   }
 }
+
+/*
+
+nCompare(str1, str2) {
+  if (!str1.length)
+    return (false)
+  for (var i = 0; i < str1.length; i++)
+    if (str1[i] !== str2[i])
+      return (false);
+  return (true);
+}
+
+splitSpaces(str) {
+  var result = [];
+  var tmp = "";
+
+  if (!str)
+    return (null);
+  for (var i = 0; i < str.length; i++)
+  {
+    if (str[i] !== ' ')
+      tmp += str[i];
+    else
+    {
+      result.push(tmp);
+      tmp = "";
+    }
+  }
+  result.push(tmp);
+  console.log(str, " -> ", result)
+  return (result)
+}
+
+CompareResult = (UserResearch) => {
+  const Movies = this.state.MovieList;
+  var current = [];
+  if (!UserResearch)
+    return ;
+  for (var i = 0; i < Movies.length; i++)
+  {
+    var splitName = this.splitSpaces(Movies[i].show.name.toLowerCase());
+    for (var k = 0; k < splitName.length; k++)
+      if (this.nCompare(UserResearch.toLowerCase(), splitName[k]))
+      {
+        current.push(Movies[i])
+        break ;
+      }
+  }
+  this.setState({ CurrentList: current })
+} */

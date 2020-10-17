@@ -9,7 +9,6 @@ import { cardStyles } from '../Style/MakeStykes';
 
 export default function MovieCard(data) {
   const classes = cardStyles();
-  console.log("ici", data)
   const Movie = data.data.show;
   return (
     <Card className={classes.root}>
