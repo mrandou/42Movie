@@ -1,5 +1,5 @@
 const theme = {
-  primaryColor: '',
+  primaryColor: 'ff000',
   secondaryColor: '',
   backgroundColor: "linear-gradient(142deg, #d4d4d47d 50%, #ffffffcf 86%)",
   barColor: "#ff0000",

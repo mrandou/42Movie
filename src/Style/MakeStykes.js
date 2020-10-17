@@ -32,4 +32,35 @@ export const cardStyles = makeStyles({
   },
 });
 
+export const movieStyles = theme => ({
+  root: {
+    maxWidth: 1000,
+    marginTop: 50,
+    paddingTop: 20,
+    margin: '0 auto',
+    paddingBottom: 30,
+  },
+  elements: {
+    maxWidth: 200,
+    margin: '0 auto'
+  },
+  description: {
+    maxWidth: 500,
+    margin: '0 auto'
+  },
+  title: {
+    textAlign: 'center',
+    marginBottom: 30,
+  },
+  tags: {
+    marginTop: 20,
+    marginRight: 10,
+  },
+  genreTags: {
+    marginTop: 10,
+    // maxWidth: 100,
+    // margin: '0 auto',
+  }
+})
+
 export default cardStyles;
