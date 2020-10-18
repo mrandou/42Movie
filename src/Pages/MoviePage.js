@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { movieStyles } from '../Style/MakeStyles'
 import { Language, Translate, Videocam, Info, Home } from '@material-ui/icons/';
 import defaultPic from '../Assets/defaultpic.jpg'
+import Movie42_no from '../Assets/42Movie_No.png'
 import { Link } from 'react-router-dom'
 
 class MoviePage extends React.Component {
@@ -50,6 +51,7 @@ class MoviePage extends React.Component {
     return (
       <div style={{ textAlign: 'center', marginTop: 50 }}>
         <Typography variant="h4">Movie Not Found</Typography>
+        <img src={Movie42_no} alt="No Movie" style={{ maxWidth: 200 }} />
         <p>Maybe it's a mistake !</p>
         <Link to={{pathname:"/"}}>
           <p>Click here to come back on the right way !</p>
