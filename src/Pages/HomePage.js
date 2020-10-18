@@ -9,6 +9,7 @@ import { CardList, MoviePic } from '../Style/StyledComponents'
 import { nCompare, splitSpaces} from '../Utilities/Tools'
 import Movie42 from '../Assets/42Movie.png'
 import Movie42_no from '../Assets/42Movie_No.png'
+import "../Style/Animation.css"
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -87,7 +88,7 @@ export default class HomePage extends React.Component {
     return (
       <div>
         <Search>
-          <Typography variant="h4">Welcolme to 42 Movie</Typography>
+          <Typography variant="h4">42 Movie</Typography>
           <SearchBar research={this.research}/>
         </Search>
         <div>
@@ -96,7 +97,9 @@ export default class HomePage extends React.Component {
             ? this.cardList(this.state.CurrentList)
             : 
               <div style={{ textAlign: 'center' }}>
-                <MoviePic src={!this.state.search ? Movie42 : Movie42_no} alt="Movie" />
+                <MoviePic
+                  src={!this.state.search ? Movie42 : Movie42_no} 
+                  alt="Movie" className={!this.state.search ? "move" : null} />
               </div>
           }
         </div>
