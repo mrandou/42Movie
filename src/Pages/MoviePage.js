@@ -49,11 +49,11 @@ class MoviePage extends React.Component {
 
   MovieNotFound() {
     return (
-      <div style={{ textAlign: 'center', marginTop: 50 }}>
+      <div style={{ textAlign: 'center', marginTop: 50, color: "white" }}>
         <Typography variant="h4">Movie Not Found</Typography>
         <img src={Movie42_no} alt="No Movie" style={{ maxWidth: 200 }} />
         <p>Maybe it's a mistake !</p>
-        <Link to={{pathname:"/"}}>
+        <Link to={{pathname:"/"}} style={{ color: "white" }}>
           <p>Click here to come back on the right way !</p>
         </Link>
       </div>
