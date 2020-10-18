@@ -1,3 +1,15 @@
+###42Movie
+
+Welcolme to my project 42Movie !
+This is a technical test for Nobo
+
+ReactJS + MaterialUI
+
+Online Link: https://42-movie.netlify.app/
+
+Start the experience with:
+`npm install && npm start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
