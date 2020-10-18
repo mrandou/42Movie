@@ -35,7 +35,7 @@ export const CardList = styled("div") ({
 
 export const MoviePic = styled("img") ({
   maxWidth: 200,
-  marginTop: 80,
+  marginTop: 30,
   margin: '0 auto',
 })
 
