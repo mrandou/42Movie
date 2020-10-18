@@ -100,31 +100,33 @@ class MoviePage extends React.Component {
               </p>
               <p>Premiered : {Movie.premiered ? Movie.premiered : "Unknown"}</p>
               <p>Rating : {Movie.rating.average ? Movie.rating.average : "Unkown"}</p>
-              <Chip 
-                icon={<Translate />}
-                label={Movie.language ? Movie.language : "Unknown"}
-                color="primary"
-                placement="top"
-                className={classes.tags}
-              />
-              <Chip 
-                icon={<Videocam />}
-                label={Movie.status ? Movie.status : "Unknown"}
-                color={Movie.status === "Ended" ? "secondary" : "primary"}
-                className={classes.tags}
-              />
-              <Chip 
-                icon={<Info />}
-                label={Movie.type ? Movie.type : "Unknown"}
-                color={"primary"}
-                className={classes.tags}
-              />
-               <Chip 
-                icon={<Language />}
-                label={Movie.network ? Movie.network.country.name : "Unknown"}
-                color={"primary"}
-                className={classes.tags}
-              />
+              <div className={classes.tagsGrup}>
+                <Chip 
+                  icon={<Translate />}
+                  label={Movie.language ? Movie.language : "Unknown"}
+                  color="primary"
+                  placement="top"
+                  className={classes.tags}
+                />
+                <Chip 
+                  icon={<Videocam />}
+                  label={Movie.status ? Movie.status : "Unknown"}
+                  color={Movie.status === "Ended" ? "secondary" : "primary"}
+                  className={classes.tags}
+                />
+                <Chip 
+                  icon={<Info />}
+                  label={Movie.type ? Movie.type : "Unknown"}
+                  color={"primary"}
+                  className={classes.tags}
+                />
+                <Chip 
+                  icon={<Language />}
+                  label={Movie.network ? Movie.network.country.name : "Unknown"}
+                  color={"primary"}
+                  className={classes.tags}
+                />
+              </div>
               <div  className={classes.home}>
                 <Link to={{pathname:"/"}}>
                   <Home color="primary"/>

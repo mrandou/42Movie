@@ -65,6 +65,11 @@ export const movieStyles = theme => ({
     textAlign: 'center',
     marginBottom: 30,
   },
+  tagsGrup: {
+    [theme.breakpoints.down(600)] : {
+      textAlign: 'center',
+    },
+  },
   tags: {
     marginTop: 20,
     marginRight: 10,
@@ -75,7 +80,7 @@ export const movieStyles = theme => ({
   },
   home: {
     textAlign:"right",
-    [theme.breakpoints.down(430)] : {
+    [theme.breakpoints.down(600)] : {
       textAlign:"center",
     },
     marginTop: 50,
