@@ -35,6 +35,7 @@ export const cardStyles = makeStyles({
     margin: '0 auto',
     maxWidth: 280,
     color: "white",
+    textAlign: 'center',
     backgroundColor: Theme.cardColor,
   },
   media: {
