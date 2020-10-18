@@ -33,6 +33,8 @@ export const cardStyles = makeStyles({
   root: {
     margin: '0 auto',
     maxWidth: 280,
+    // color: "white",
+    // backgroundColor: Theme.primaryColor,
   },
   media: {
     height: 280,
