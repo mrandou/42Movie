@@ -5,13 +5,16 @@ import Typography from '@material-ui/core/Typography';
 import SearchBar from '../Components/SearchBar'
 import MovieCard from '../Components/MovieCard'
 import Grid from '@material-ui/core/Grid';
-import { CardList } from '../Style/StyledComponents'
+import { CardList, MoviePic } from '../Style/StyledComponents'
 import { nCompare, splitSpaces} from '../Utilities/Tools'
+import Movie42 from '../Assets/42Movie.png'
+import Movie42_no from '../Assets/42Movie_No.png'
 
 export default class HomePage extends React.Component {
   constructor(props) {
 		super(props);
 		this.state = {
+      search: false,
       MovieList: "",
       CurrentList: [],
     };
@@ -26,6 +29,7 @@ export default class HomePage extends React.Component {
     }
 
   research = (UserResearch) => {
+      this.setState({ search: UserResearch ? true : false })
     this.setState({ CurrentList: [] })
     this.CompareResult(UserResearch);
   }
@@ -90,7 +94,10 @@ export default class HomePage extends React.Component {
           {
             this.state.CurrentList[0]
             ? this.cardList(this.state.CurrentList)
-            : null
+            : 
+              <div style={{ textAlign: 'center' }}>
+                <MoviePic src={!this.state.search ? Movie42 : Movie42_no} alt="Movie" />
+              </div>
           }
         </div>
       </div>

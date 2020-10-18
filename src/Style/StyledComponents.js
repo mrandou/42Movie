@@ -2,11 +2,6 @@ import { styled } from '@material-ui/core/styles';
 import { AppBar } from '@material-ui/core';
 import theme from './Theme'
 
-export const MyApp = styled("div") ({
-  // background: theme.backgroundColor,
-  // height: '100vh'
-});
-
 export const HeaderBar = styled(AppBar)({
   background: theme.secondaryColor,
   boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -23,7 +18,7 @@ export const FooterBar = styled(AppBar)({
 });
 
 export const Search = styled("div") ({
-  paddingTop: '20px',
+  paddingTop: '40px',
   textAlign: "center",
 });
 
@@ -34,4 +29,10 @@ export const CardList = styled("div") ({
   marginBottom: '80px'
 })
 
-export default MyApp;
+export const MoviePic = styled("img") ({
+  maxWidth: 200,
+  marginTop: 80,
+  margin: '0 auto',
+})
+
+export default HeaderBar;

@@ -1,12 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Theme from './Theme'
 
 export const searchStyles = theme => ({
   root: {
-    marginTop: '30px',
+    marginTop: '50px',
     padding: '3px 5px',
     display: 'flex',
     alignItems: 'center',
     maxWidth: 400,
+    boxShadow: "0 1px 6px -2px " + Theme.secondaryColor,
+    borderRadius: 24,
     [theme.breakpoints.down(430)] : {
       marginRight: "5%",
       marginLeft: "5%",

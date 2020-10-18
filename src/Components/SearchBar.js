@@ -18,12 +18,13 @@ class SearchBar extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper component="form" className={classes.root}>
+      <Paper className={classes.root}>
         <MovieIcon />
         <Divider className={classes.divider} orientation="vertical" />
         <InputBase
           className={classes.input}
           placeholder="Search Movies"
+          type="search"
           onChange={this.UserTyping}
         />
         <SearchIcon  className={classes.iconButton} />
