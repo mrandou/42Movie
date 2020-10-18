@@ -3,17 +3,18 @@ import Theme from './Theme'
 
 export const searchStyles = theme => ({
   root: {
-    marginTop: '50px',
+    marginTop: '25px',
     padding: '3px 5px',
     display: 'flex',
     alignItems: 'center',
     maxWidth: 400,
-    boxShadow: "0 1px 6px -2px " + Theme.secondaryColor,
+    boxShadow: "0 0px 0px 3px " + Theme.secondaryColor,
     borderRadius: 24,
     [theme.breakpoints.down(430)] : {
       marginRight: "5%",
       marginLeft: "5%",
     },
+    marginBottom: 40,
     margin: '0 auto'
   },
   input: {
@@ -33,8 +34,8 @@ export const cardStyles = makeStyles({
   root: {
     margin: '0 auto',
     maxWidth: 280,
-    // color: "white",
-    // backgroundColor: Theme.primaryColor,
+    color: "white",
+    backgroundColor: Theme.cardColor,
   },
   media: {
     height: 280,
@@ -48,6 +49,8 @@ export const movieStyles = theme => ({
     paddingTop: 50,
     margin: '0 auto',
     paddingBottom: 100,
+    color: "white",
+    backgroundColor: Theme.cardColor
   },
   elements: {
     maxWidth: 200,
@@ -55,6 +58,7 @@ export const movieStyles = theme => ({
   },
   description: {
     maxWidth: 500,
+    textAlign: "justify",
     margin: '0 auto'
   },
   title: {

@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <div>
       <HeaderBar position="static">
         <Toolbar>
           <Link to={{pathname:"/"}} style={{ textDecoration: "none", color: "white" }}>
@@ -18,6 +17,5 @@ export default function Header() {
           </Link>
         </Toolbar>
       </HeaderBar>
-    </div>
   )
 }

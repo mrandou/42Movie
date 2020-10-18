@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { Search } from '../Style/StyledComponents'
-import Typography from '@material-ui/core/Typography';
 import SearchBar from '../Components/SearchBar'
 import MovieCard from '../Components/MovieCard'
 import Grid from '@material-ui/core/Grid';
@@ -9,6 +8,7 @@ import { CardList, MoviePic } from '../Style/StyledComponents'
 import { nCompare, splitSpaces} from '../Utilities/Tools'
 import Movie42 from '../Assets/42Movie.png'
 import Movie42_no from '../Assets/42Movie_No.png'
+import Movie42_typo from '../Assets/42Movie_Typo_W.png'
 import "../Style/Animation.css"
 
 export default class HomePage extends React.Component {
@@ -88,7 +88,7 @@ export default class HomePage extends React.Component {
     return (
       <div>
         <Search>
-          <Typography variant="h4">42 Movie</Typography>
+          <img src={Movie42_typo} alt="42Movie" style={{ maxWidth: 200 }} />
           <SearchBar research={this.research}/>
         </Search>
         <div>

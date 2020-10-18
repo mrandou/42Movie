@@ -5,18 +5,23 @@ import MoviePage from './Pages/MoviePage'
 import Error404 from './Pages/404Page'
 import Header from './Organisms/Header';
 import Footer from './Organisms/Footer';
+import { MyApp } from './Style/StyledComponents'
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/Movie/:id" component={MoviePage}/>
-        <Route component={Error404} />
-      </Switch>
-      <Footer />
-    </Router>
+    <div>
+      <MyApp>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/Movie/:id" component={MoviePage}/>
+            <Route component={Error404} />
+          </Switch>
+          <Footer />
+        </Router>
+      </MyApp>
+    </div>
   );
 }
 
