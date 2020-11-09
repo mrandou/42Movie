@@ -1,7 +1,6 @@
 ### 42Movie
 
 Welcolme to my project 42Movie !
-This is a technical test for Nobo
 
 ReactJS + MaterialUI
 
